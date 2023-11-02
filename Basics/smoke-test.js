@@ -3,12 +3,12 @@ import { sleep } from "k6";
 
 export const options = {
   vus: 1,
-  duration: "30s",
+  duration: "10s",
 };
 
 export default function () {
   http.get("https://test.k6.io");
   sleep(2);
-  http.get("https://test.k6.io/news");
+  http.get("https://test.k6.io/contacts.php");
   sleep(1);
 }
