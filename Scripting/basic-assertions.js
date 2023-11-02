@@ -8,6 +8,9 @@ export default function () {
     name_of_assertion: (res) => {
       return res.status === 200;
     },
+    second_assertion_in_check: (res) => {
+      return true;
+    },
   });
   check(res, {
     is_startup_page: (res) => {
