@@ -3,8 +3,10 @@ import { sleep } from "k6";
 import exec from "k6/execution";
 
 export const options = {
-  duration: "5s",
-  vus: 10,
+  // iterations: 10,
+  duration: "100s",
+  vus: 100,
+  iterations: 100,
   thresholds: {
     http_req_duration: ["p(95)<500"],
     http_req_failed: ["rate<0.01"],
@@ -16,6 +18,8 @@ export const options = {
 
 export default function () {
   http.get("https://test.k6.io");
+
+  console.log(exec.scenario.iterationInTest);
 
   // This give the iteration number.
   //   console.log(exec.scenario.iterationInTest);
