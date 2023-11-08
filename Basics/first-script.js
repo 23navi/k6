@@ -3,5 +3,5 @@ import http from "k6/http";
 
 export default function () {
   // "https://test.k6.io" is just an endpoint to test given by k6 team
-  http.get("https://test.k6.io");
+  const res= http.get("https://test.k6.io");
 }
